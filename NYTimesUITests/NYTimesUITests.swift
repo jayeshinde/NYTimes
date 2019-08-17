@@ -30,9 +30,10 @@ class NYTimesUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
+    func testTap() {
+      let app = XCUIApplication()
+      app.tables/*@START_MENU_TOKEN@*/.staticTexts["The Day Jeffrey Epstein Told Me He Had Dirt on Powerful People"]/*[[".cells.staticTexts[\"The Day Jeffrey Epstein Told Me He Had Dirt on Powerful People\"]",".staticTexts[\"The Day Jeffrey Epstein Told Me He Had Dirt on Powerful People\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+      app.navigationBars["NYTimes.ArticleDetailVC"].buttons["Back"].tap()
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
 }
