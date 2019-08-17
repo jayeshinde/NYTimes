@@ -1,0 +1,75 @@
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - explicit_top_level_acl
+  - explicit_init
+  - conditional_returns_on_newline
+  - empty_count
+opt_in_rules: # some rules are only opt-in
+  - array_init
+  - attributes
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - cyclomatic_complexity
+  - discouraged_direct_init
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - dynamic_inline
+  - empty_parameters
+  - empty_string
+  - explicit_enum_raw_value
+  - extension_access_modifier
+  - first_where
+  - implicit_return
+  # - let_var_whitespace #problem trailing_whitespace
+  - operator_usage_whitespace
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+  - NYTimes
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - ./NYTimes/App/AppDelegate.swift
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 140
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 800 # error before change 400
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 3 # only warning before change 4
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error before change 4
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+    - CONNECTION_TIMEOUT
+    - k
+    - v
+    - x
+    - md
+    - vc
+    - _author
+    - _url
+    - FetchedNews
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
