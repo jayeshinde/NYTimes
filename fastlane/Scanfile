@@ -9,7 +9,6 @@
 scheme("NYTimes")
 open_report(true)
 clean(true)
-device("iPhone XR (12.4)")
 output_types("html")
 
 # Enable skip_build to skip debug builds for faster test performance
